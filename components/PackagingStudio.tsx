@@ -139,11 +139,6 @@ const PackagingStudio: React.FC = () => {
                           Logistics: {asset.fbaFeeTier}
                         </span>
                       )}
-                      {asset.type === 'Insert Card' && (
-                        <span className="px-3 py-1 bg-indigo-600 text-white rounded-lg text-[10px] font-black uppercase tracking-widest">
-                           TOS Safe Review CTA
-                        </span>
-                      )}
                    </div>
                    <h3 className="text-2xl font-black text-slate-900 tracking-tight">{asset.title}</h3>
                 </div>
@@ -164,31 +159,66 @@ const PackagingStudio: React.FC = () => {
                    </div>
                    
                    {asset.type === 'Insert Card' && asset.insertFeatures && (
-                     <div className="grid grid-cols-1 gap-4 p-6 bg-slate-900 rounded-[2.5rem] text-white">
-                        <div className="flex items-center gap-3">
-                           <div className="w-8 h-8 bg-indigo-600 rounded-xl flex items-center justify-center text-xs">⭐</div>
-                           <div>
-                              <p className="text-[9px] font-black text-indigo-400 uppercase tracking-widest">TOS Compliant Request</p>
-                              <p className="text-xs font-bold">{asset.insertFeatures.reviewRequestPolicy}</p>
-                           </div>
+                     <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white space-y-6 shadow-2xl">
+                        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                           <h4 className="text-xs font-black uppercase tracking-widest text-indigo-400">Insert Feature Audit (7-Points)</h4>
+                           <span className="px-2 py-1 bg-emerald-500/10 text-emerald-400 text-[8px] font-black rounded uppercase tracking-widest border border-emerald-500/20">TOS Compliant</span>
                         </div>
-                        <div className="flex items-center gap-3">
-                           <div className="w-8 h-8 bg-emerald-600 rounded-xl flex items-center justify-center text-xs">📞</div>
-                           <div>
-                              <p className="text-[9px] font-black text-emerald-400 uppercase tracking-widest">Refund Mitigation (Support Routing)</p>
-                              <p className="text-xs font-bold">{asset.insertFeatures.supportRouting}</p>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                           <div className="space-y-4">
+                              <div className="flex items-start gap-3">
+                                 <div className="w-8 h-8 rounded-xl bg-indigo-600/20 flex items-center justify-center text-xs text-indigo-400 border border-indigo-500/30">🙏</div>
+                                 <div>
+                                    <p className="text-[9px] font-black text-indigo-400 uppercase tracking-widest">Thank You (Human Touch)</p>
+                                    <p className="text-[11px] font-bold text-slate-300 leading-tight">"{asset.insertFeatures.thankYouText}"</p>
+                                 </div>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                 <div className="w-8 h-8 rounded-xl bg-emerald-600/20 flex items-center justify-center text-xs text-emerald-400 border border-emerald-500/30">📜</div>
+                                 <div>
+                                    <p className="text-[9px] font-black text-emerald-400 uppercase tracking-widest">Clear Instructions</p>
+                                    <p className="text-[11px] font-bold text-slate-300 leading-tight">"{asset.insertFeatures.usageInstructionsSnippet}"</p>
+                                 </div>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                 <div className="w-8 h-8 rounded-xl bg-amber-600/20 flex items-center justify-center text-xs text-amber-400 border border-amber-500/30">📞</div>
+                                 <div>
+                                    <p className="text-[9px] font-black text-amber-400 uppercase tracking-widest">Support (Prevent Returns)</p>
+                                    <p className="text-[11px] font-bold text-slate-300 leading-tight">"{asset.insertFeatures.supportRouting}"</p>
+                                 </div>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                 <div className="w-8 h-8 rounded-xl bg-sky-600/20 flex items-center justify-center text-xs text-sky-400 border border-sky-500/30">🛡️</div>
+                                 <div>
+                                    <p className="text-[9px] font-black text-sky-400 uppercase tracking-widest">Warranty Activation</p>
+                                    <p className="text-[11px] font-bold text-slate-300 leading-tight">"{asset.insertFeatures.warrantyCTA}"</p>
+                                 </div>
+                              </div>
                            </div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                           <div className="w-8 h-8 bg-amber-600 rounded-xl flex items-center justify-center text-xs">🛡️</div>
-                           <div>
-                              <p className="text-[9px] font-black text-amber-400 uppercase tracking-widest">Warranty Activation</p>
-                              <p className="text-xs font-bold">{asset.insertFeatures.warrantyCTA}</p>
+                           <div className="space-y-4">
+                              <div className="flex items-start gap-3">
+                                 <div className="w-8 h-8 rounded-xl bg-rose-600/20 flex items-center justify-center text-xs text-rose-400 border border-rose-500/30">⭐</div>
+                                 <div>
+                                    <p className="text-[9px] font-black text-rose-400 uppercase tracking-widest">Policy Review Request</p>
+                                    <p className="text-[11px] font-bold text-slate-300 leading-tight">"{asset.insertFeatures.reviewRequestPolicy}"</p>
+                                 </div>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                 <div className="w-8 h-8 rounded-xl bg-purple-600/20 flex items-center justify-center text-xs text-purple-400 border border-purple-500/30">📖</div>
+                                 <div>
+                                    <p className="text-[9px] font-black text-purple-400 uppercase tracking-widest">Brand Story / Mission</p>
+                                    <p className="text-[11px] font-bold text-slate-300 leading-tight">"{asset.insertFeatures.brandStorySnippet}"</p>
+                                 </div>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                 <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center text-xs text-white border border-white/20">📱</div>
+                                 <div>
+                                    <p className="text-[9px] font-black text-white uppercase tracking-widest">QR Code → Bonus Guide</p>
+                                    <p className="text-[11px] font-bold text-slate-300 leading-tight">"{asset.insertFeatures.qrCodeStrategy}"</p>
+                                 </div>
+                              </div>
                            </div>
-                        </div>
-                        <div className="pt-4 border-t border-white/10">
-                           <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1">QR Code Strategy</p>
-                           <p className="text-xs font-medium text-slate-400 italic">"{asset.insertFeatures.qrCodeStrategy}"</p>
                         </div>
                      </div>
                    )}
@@ -236,7 +266,7 @@ const PackagingStudio: React.FC = () => {
           <div className="h-96 border-4 border-dashed border-slate-100 rounded-[3.5rem] flex flex-col items-center justify-center text-slate-300 bg-white/40 p-12 text-center">
             <div className="text-8xl mb-6 opacity-30 grayscale">📦📏✨</div>
             <h3 className="text-2xl font-black text-slate-400 mb-2 uppercase tracking-tighter italic">Packaging Hub Standby</h3>
-            <p className="text-sm font-medium max-w-sm mx-auto">Enter product specs to generate structural box designs, TOS-compliant insert cards, and visual manuals for your FBA package.</p>
+            <p className="text-sm font-medium max-w-sm mx-auto leading-relaxed">Enter product specs to generate structural box designs, TOS-compliant insert cards, and visual manuals for your FBA package.</p>
           </div>
         )}
       </div>

@@ -55,7 +55,8 @@ export interface PackagingAsset {
   visualCueStrategy: string;
   brandConsistencyScore: number;
   insertFeatures?: {
-    hasThankYou: boolean;
+    thankYouText: string;
+    usageInstructionsSnippet: string;
     supportRouting: string;
     warrantyCTA: string;
     reviewRequestPolicy: string;

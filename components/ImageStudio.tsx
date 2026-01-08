@@ -68,6 +68,7 @@ const ImageStudio: React.FC = () => {
     { type: 'Localized Tech Specs', prompt: 'Technical specs diagram, localized metric units and text descriptions in ' },
     { type: 'Regional Comparison', prompt: 'Competitive advantage comparison table, localized copy in ' },
     { type: 'Macro Utility', prompt: 'Macro shot of product textures and build quality, cinematic lighting: ' },
+    { type: 'In-Use Product', prompt: 'Action shot showing the product being used correctly and effectively by a person from the target demographic in ' },
   ];
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {

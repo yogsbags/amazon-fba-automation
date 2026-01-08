@@ -35,13 +35,14 @@ export const generatePackagingSuite = async (productName: string, specs: string,
     model: 'gemini-3-pro-preview',
     contents: `Generate a premium Amazon FBA Packaging Suite for '${productName}' under brand '${brandName}'. Locale: ${lang}.
     
-    SPECIAL FOCUS FOR 'Insert Card':
-    - Must include a "Thank You" with a human touch.
-    - Explicitly route support requests to a custom contact placeholder to prevent Amazon returns.
-    - Clear Warranty Activation CTA.
-    - TOS-Compliant Review Request (No incentives).
-    - Brand story/mission snippet.
-    - QR Code Placement for "Bonus Guide".
+    SPECIAL FOCUS FOR 'Insert Card' (MANDATORY 7-POINT CHECKLIST):
+    1. Human-Touch Thank You card content.
+    2. Clear, condensed usage instructions.
+    3. High-priority support contact routing (to stop returns).
+    4. Warranty activation CTA.
+    5. TOS-compliant review request (no incentives).
+    6. Compelling brand story/mission snippet.
+    7. QR Code call-to-action for bonus digital content/guides.
     
     Return a JSON array of 3 assets: 'Outer Box', 'Insert Card', 'User Manual'.`,
     config: {
@@ -63,7 +64,8 @@ export const generatePackagingSuite = async (productName: string, specs: string,
             insertFeatures: {
               type: Type.OBJECT,
               properties: {
-                hasThankYou: { type: Type.BOOLEAN },
+                thankYouText: { type: Type.STRING },
+                usageInstructionsSnippet: { type: Type.STRING },
                 supportRouting: { type: Type.STRING },
                 warrantyCTA: { type: Type.STRING },
                 reviewRequestPolicy: { type: Type.STRING },
