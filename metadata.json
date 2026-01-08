@@ -1,0 +1,8 @@
+{
+  "name": "Astra FBA - AI Amazon Suite",
+  "description": "A high-end Amazon FBA automation platform providing AI-powered product photography, SEO listing optimization, and PPC campaign management.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
